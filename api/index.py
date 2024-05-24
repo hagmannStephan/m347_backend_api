@@ -4,6 +4,12 @@ import json
 app = Flask(__name__)
 
 
+# Check if API is up and running
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
+
 # Return list of every flight
 @app.route('/flights', methods=['GET'])
 def get_flights():
