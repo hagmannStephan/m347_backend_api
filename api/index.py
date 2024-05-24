@@ -1,4 +1,5 @@
 from flask import Flask
+import json
 
 app = Flask(__name__)
 
@@ -6,7 +7,9 @@ app = Flask(__name__)
 # Return list of every flight
 @app.route('/flights', methods=['GET'])
 def get_flights():
-    return 'Not yet available'
+    with open('data/flights.json', 'r') as file:
+        data = json.load(file)
+    return data
 
 
 # Get specific flight by id
@@ -35,5 +38,9 @@ def patch_flight(id):
 
 # Delete a flight
 @app.route('/flights/<id>', methods=['DELETE'])
-def patch_flight(id):
+def delete_flight(id):
     return 'Not yet available'
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
