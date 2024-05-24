@@ -4,7 +4,7 @@
   ],
   "functions": {
     "api/index.py": {
-      "includeFiles": "api/data/flights.json"
+      "includeFiles": "./api/data/flights.json"
     }
   }
 }
