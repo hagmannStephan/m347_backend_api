@@ -1,5 +1,8 @@
-from flask import Flask
-import json
+from flask import Flask, jsonify
+from models.Flight import Flight
+# from vercel import get
+import os
+import requests
 
 app = Flask(__name__)
 
@@ -7,15 +10,15 @@ app = Flask(__name__)
 # Check if API is up and running
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return 'Not yet available'
 
 
 # Return list of every flight
 @app.route('/flights', methods=['GET'])
 def get_flights():
-    with open('data/flights.json', 'r') as file:
-        data = json.load(file)
-    return data
+    flight = Flight(1, "Zurich", "Unknown")
+    flight = flight.to_dict()
+    return jsonify(flight)
 
 
 # Get specific flight by id
