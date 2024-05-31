@@ -1,10 +1,30 @@
 from flask import Flask, jsonify
-from models.Flight import Flight
+# from models.Flight import Flight
 # from vercel import get
 import os
 import requests
 
 app = Flask(__name__)
+
+class Flight:
+
+    _last_id = 0
+
+    def __init__(self, Employee_idEmployee: int, origin: str, destination: str, ):
+        Flight._last_id += 1
+        self.idFlight = Flight._last_id
+        self.Employee_idEmployee = Employee_idEmployee
+        self.origin = origin
+        self.destination = destination
+
+    def to_dict(self):
+        return {
+            'idFlight': self.idFlight,
+            'Employee_idEmployee': self.Employee_idEmployee,
+            'origin': self.origin,
+            'destination': self.destination
+        }
+
 
 
 # Check if API is up and running
