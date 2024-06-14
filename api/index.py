@@ -1,9 +1,10 @@
 from flask import Flask, jsonify, make_response, request
 import json
 import os
-# from models.Flight import Flight
-# from vercel import get
-# from test import my_var
+from models.Flight import Flight
+from models.Employee import Employee
+from models.BusinessTrip import BusinessTrip
+from models.Meeting import Meeting
 
 app = Flask(__name__)
 
@@ -68,86 +69,6 @@ businessTrips_data = [
             'employees': [6]
         }
 ]
-
-
-class Flight:
-
-    _last_id = 1    # Set to 0 if flights_data gets cleared
-
-    def __init__(self, Employee_idEmployee: int, origin: str, destination: str, ):
-        Flight._last_id += 1
-        self.idFlight = Flight._last_id
-        self.Employee_idEmployee = Employee_idEmployee
-        self.origin = origin
-        self.destination = destination
-
-    def to_dict(self):
-        return {
-            'idFlight': self.idFlight,
-            'Employee_idEmployee': self.Employee_idEmployee,
-            'origin': self.origin,
-            'destination': self.destination
-        }
-
-
-class Meeting:
-
-    _last_id = 1    # Set to 0 if meetings_data gets cleared
-
-    def __init__(self, description: str, Businesstrip_idBusinesstrip: int, title: str):
-        Meeting._last_id += 1
-        self.idMeeting = Meeting._last_id
-        self.description = description
-        self.Businesstrip_idBusinesstrip = Businesstrip_idBusinesstrip
-        self.title = title
-
-    def to_dict(self):
-        return {
-            'idMeeting': self.idMeeting,
-            'description': self.description,
-            'Businesstrip_idBusinesstrip': self.Businesstrip_idBusinesstrip,
-            'title': self.title
-        }
-
-
-class Employee:
-
-    _last_id = 1    # Set to 0 if meetings_data gets cleared
-
-    def __init__(self, name: str, title: str, businessTrips: list):
-        Employee._last_id += 1
-        self.idEmployee = Employee._last_id
-        self.name = name
-        self.title = title
-        self.businessTrips = businessTrips
-
-    def to_dict(self):
-        return {
-            'idEmployee': self.idEmployee,
-            'name': self.name,
-            'title': self.title,
-            'businessTrips': [trip.to_dict() for trip in self.businessTrips]
-        }
-
-
-class BusinessTrip:
-
-    _last_id = 1    # Set to 0 if businessTrips_data gets cleared
-
-    def __init__(self, description: str, title: str, employees: list):
-        BusinessTrip._last_id += 1
-        self.idBusinessTrip = BusinessTrip._last_id
-        self.description = description
-        self.title = title
-        self.employees = employees
-
-    def to_dict(self):
-        return {
-            'idBusinessTrip': self.idBusinessTrip,
-            'description': self.description,
-            'title': self.title,
-            'employees': [employee.to_dict() for employee in self.employees]
-        }
 
 
 # Check if API is up and running

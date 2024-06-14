@@ -1,6 +1,6 @@
 class Flight:
 
-    _last_id = 0
+    _last_id = 1    # Set to 0 if flights_data gets cleared
 
     def __init__(self, Employee_idEmployee: int, origin: str, destination: str, ):
         Flight._last_id += 1

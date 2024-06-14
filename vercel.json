@@ -1,5 +1,9 @@
 {
   "rewrites": [
+    { "source": "/api/models/BusinessTrip.py", "destination": "/api/models/BusinessTrip.py" },
+    { "source": "/api/models/Employee.py", "destination": "/api/models/Employee.py" },
+    { "source": "/api/models/Flight.py", "destination": "/api/models/Flight.py" },
+    { "source": "/api/models/Meeting.py", "destination": "/api/models/Meeting.py" },
     { "source": "/api/test.json", "destination": "/api/test.json" },
     { "source": "/(.*)", "destination": "/api/index" }
   ]
