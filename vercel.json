@@ -1,8 +1,5 @@
 {
   "rewrites": [
-    { "source": "/test", "destination": "/api/test.json" },
-    { "source": "/test1", "destination": "/api/test" },
-    { "source": "/test.json", "destination": "/api/test.json" },
     { "source": "/api/test.json", "destination": "/api/test.json" },
     { "source": "/(.*)", "destination": "/api/index" }
   ]
