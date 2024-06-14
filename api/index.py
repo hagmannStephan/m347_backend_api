@@ -151,7 +151,16 @@ class BusinessTrip:
 # Check if API is up and running
 @app.route('/')
 def home():
-    return my_var
+    try:
+        return {
+            "statusCode": 200,
+            "body": my_var
+        }
+    except Exception as e:
+        return {
+            "statusCode": 500,
+            "body": f"Internal Server Error: {str(e)}"
+        }
 
 
 # ---- flights endpoints ----
