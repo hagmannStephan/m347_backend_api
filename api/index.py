@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, make_response, request
 # from models.Flight import Flight
 # from vercel import get
-from test import my_var
+# from test import my_var
 
 app = Flask(__name__)
 
