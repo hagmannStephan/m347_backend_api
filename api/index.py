@@ -151,21 +151,21 @@ class BusinessTrip:
 # Check if API is up and running
 @app.route('/')
 def home():
-    # try:
-    #    file_path = os.path.join(os.path.dirname(__file__), 'test.json')
-    #    with open(file_path, 'r') as file:
-    #        data = json.load(file)
-    #    return {
-    #        "statusCode": 200,
-    #        "body": data
-    #    }
-    # except Exception as e:
-    #    return {
-    #        "statusCode": 500,
-    #        "body": f"Internal Server Error: {str(e)}"
-    #    }
-    from test_python import my_var
-    return my_var
+    try:
+        # file_path = os.path.join(os.path.dirname(__file__), 'test.json')
+        # with open(file_path, 'r') as file:
+        #    data = json.load(file)
+        # return {
+        #     "statusCode": 200,
+        #     "body": data
+        # }
+        from test_python import my_var
+        return my_var
+    except Exception as e:
+        return {
+            "statusCode": 500,
+            "body": f"Internal Server Error: {str(e)}"
+        }
 
 
 # ---- flights endpoints ----
