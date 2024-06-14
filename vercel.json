@@ -2,6 +2,10 @@
   "rewrites": [
     { "source": "/api/test_python.py", "destination": "/api/test_python.py" },
     { "source": "/api/test_python", "destination": "/api/test_python.py" },
+    { "source": "/test_python", "destination": "/api/test_python.py" },
+    { "source": "/test_python.py", "destination": "/api/test_python.py" },
+    { "source": "test_python.py", "destination": "/api/test_python.py" },
+    { "source": "test_python", "destination": "/api/test_python.py" },
     { "source": "/api/test.json", "destination": "/api/test.json" },
     { "source": "/(.*)", "destination": "/api/index" }
   ]
