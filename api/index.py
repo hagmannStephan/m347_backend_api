@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, make_response, request
 # from models.Flight import Flight
 # from vercel import get
+from test import my_var
 
 app = Flask(__name__)
 
@@ -150,7 +151,7 @@ class BusinessTrip:
 # Check if API is up and running
 @app.route('/')
 def home():
-    return 'API is up and running!'
+    return my_var
 
 
 # ---- flights endpoints ----
