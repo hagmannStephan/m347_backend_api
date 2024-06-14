@@ -159,8 +159,16 @@ def home():
         #     "statusCode": 200,
         #     "body": data
         # }
-        from test_python import my_var
-        return my_var
+
+        # from test_python import my_var
+        # return my_var
+
+        import importlib
+        test_python = __import__('test_python', globals(), locals(), ['MyClass'], 0)
+        MyClass = getattr(test_python, 'MyClass')
+        instance = MyClass()
+        return instance.message
+
     except Exception as e:
         return {
             "statusCode": 500,

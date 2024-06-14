@@ -4,13 +4,5 @@
     { "source": "/api/test_python", "destination": "/api/test_python.py" },
     { "source": "/api/test.json", "destination": "/api/test.json" },
     { "source": "/(.*)", "destination": "/api/index" }
-  ],
-  "functions": {
-    "api/index.py": {
-      "runtime": "vercel-python@0.5.1"
-    },
-    "api/test_python.py": {
-      "runtime": "vercel-python@0.5.1"
-    }
-  }
+  ]
 }
