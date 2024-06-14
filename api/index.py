@@ -154,7 +154,7 @@ def home():
     try:
         return {
             "statusCode": 200,
-            "body": my_var
+            "body": "API is up and running"
         }
     except Exception as e:
         return {
