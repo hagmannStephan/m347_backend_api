@@ -7,10 +7,10 @@
   ],
   "functions": {
     "api/index.py": {
-      "runtime": "python3.9"
+      "runtime": "vercel-python@0.5.1"
     },
     "api/test_python.py": {
-      "runtime": "python3.9"
+      "runtime": "vercel-python@0.5.1"
     }
   }
 }
