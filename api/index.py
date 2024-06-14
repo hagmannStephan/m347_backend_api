@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, make_response, request
+import json
 # from models.Flight import Flight
 # from vercel import get
 # from test import my_var
@@ -152,9 +153,12 @@ class BusinessTrip:
 @app.route('/')
 def home():
     try:
+        file_path = 'test.json'
+        with open(file_path, 'r') as file:
+            data = json.load(file)
         return {
             "statusCode": 200,
-            "body": "API is up and running"
+            "body": data
         }
     except Exception as e:
         return {
