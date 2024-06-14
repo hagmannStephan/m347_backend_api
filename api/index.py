@@ -164,7 +164,7 @@ def home():
     #        "statusCode": 500,
     #        "body": f"Internal Server Error: {str(e)}"
     #    }
-    from test import my_var
+    from test_python import my_var
     return my_var
 
 
