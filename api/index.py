@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, make_response, request
 import json
+import os
 # from models.Flight import Flight
 # from vercel import get
 # from test import my_var
@@ -153,7 +154,7 @@ class BusinessTrip:
 @app.route('/')
 def home():
     try:
-        file_path = 'test.json'
+        file_path = os.path.join(os.path.dirname(__file__), 'test.json')
         with open(file_path, 'r') as file:
             data = json.load(file)
         return {
