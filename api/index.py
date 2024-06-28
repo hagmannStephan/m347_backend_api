@@ -152,23 +152,7 @@ class BusinessTrip:
 @app.route('/')
 def home():
     try:
-        # file_path = os.path.join(os.path.dirname(__file__), 'test.json')
-        # with open(file_path, 'r') as file:
-        #    data = json.load(file)
-        # return {
-        #     "statusCode": 200,
-        #     "body": data
-        # }
-
-        # from test_python import my_var
-        # return my_var
-
-        import importlib
-        test_python = __import__('test_python', globals(), locals(), ['MyClass'], 0)
-        MyClass = getattr(test_python, 'MyClass')
-        instance = MyClass()
-        return instance.message
-
+        return "API is up and running"
     except Exception as e:
         return {
             "statusCode": 500,
