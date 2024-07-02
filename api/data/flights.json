@@ -1,8 +1,14 @@
 [
   {
-    "idFlight": 0,
-    "Employee_idEmployee": 0,
-    "origin": "Zurich",
+    "idFlight": 1,
+    "Employee_idEmployee": 1,
+    "origin": "New York",
     "destination": "London"
+  },
+  {
+    "idFlight": 2,
+    "Employee_idEmployee": 2,
+    "origin": "Paris",
+    "destination": "Tokyo"
   }
 ]
